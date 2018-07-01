@@ -1,0 +1,30 @@
+function rot13(str) 
+{ // LBH QVQ VG!
+ 
+ p = "";
+  for(let i=0;i < str.length;i++)
+  {
+    if(str.charCodeAt(i) < 65 || str.charCodeAt(i) >90 )
+    {
+     p = p.concat(str[i]);
+    }
+    else
+    {
+      code = str.charCodeAt(i);
+      {
+        if(code < 78 )
+        {
+         p = p.concat(String.fromCharCode(code+13));
+        }
+        else
+        {
+         p = p.concat(String.fromCharCode(code-13));
+        }
+      }
+    }
+  }
+  return p;
+}
+
+// Change the inputs below to test
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.");
