@@ -1,0 +1,34 @@
+function palindrome(str) {
+  // Good luck!
+  var ispalin = "";
+  var ispalin2 = "";
+  for(let i= 0;i< str.length;i++)
+  {
+  var code = str.charCodeAt(i);
+  if ((code > 47 && code < 58) ||// numeric (0-9)
+        (code > 64 && code < 91) ||// upper alpha (A-Z)
+        (code > 96 && code < 123)) 
+        { // lower alpha (a-z)
+       ispalin = ispalin.concat(String.fromCharCode(code));
+       
+     }
+}
+console.log(ispalin);
+var len = ispalin.length;
+for(let i=len-1;i>=0;i--)
+{
+  ispalin2 = ispalin2.concat(ispalin[i]);
+}
+if (ispalin.length === ispalin2.length)
+{
+   if (ispalin.toLowerCase() === ispalin2.toLowerCase())
+   {
+     return true;
+   }
+}
+
+return false;
+}
+
+
+palindrome("rec CAhdhkjdR");
